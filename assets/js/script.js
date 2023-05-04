@@ -4,10 +4,9 @@ var generateBtn = document.querySelector("#generate");
 // Prompt for or randomly generate the length of the password
 function getLength() {
     // Prompt the user if they would like to specify the length of their password or use a random length
-    if ( confirm("Would you like to specify the length of your password or use a random length?") ) {
-        // Prompt the user for the length of their password
-        var length = prompt("How many characters would you like your password to be?");
-        // TODO: Cast the returned value as a number
+    if ( confirm( "Would you like to specify the length of your password or use a random length?" ) ) {
+        // Prompt the user for the length of their password and store the input as a number
+        var length = Number( prompt("How long (between 8 and 128 characters) would you like your password to be?") );
 
         // TODO: Validate the user's input
 
@@ -24,7 +23,7 @@ function getLength() {
 // Write password to the #password input
 function writePassword() {
     // Present user with a series of confirmation dialogs and and prompts for password criteria
-    var passwordLength = getLength;
+    var passwordLength = getLength();
     var passwordLowercase = confirm("Would you like to include lowercase letters?");
     var passwordUppercase = confirm("Would you like to include uppercase letters?");
     var passwordNumbers = confirm("Would you like to include numbers?");
