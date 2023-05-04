@@ -3,13 +3,13 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-    // Present user with a series of prompts for password criteria
-    var passwordLength = prompt("Would you like to specify the length of your password?");
+    // Present user with a series of confirmation dialogs and and prompts for password criteria
+    var passwordLength = confirm("Would you like to specify the length of your password?");
     var passwordLengthValue = prompt("How many characters would you like your password to be?");
-    var passwordLowercase = prompt("Would you like to include lowercase letters?");
-    var passwordUppercase = prompt("Would you like to include uppercase letters?");
-    var passwordNumbers = prompt("Would you like to include numbers?");
-    var passwordSpecial = prompt("Would you like to include special characters?");
+    var passwordLowercase = confirm("Would you like to include lowercase letters?");
+    var passwordUppercase = confirm("Would you like to include uppercase letters?");
+    var passwordNumbers = confirm("Would you like to include numbers?");
+    var passwordSpecial = confirm("Would you like to include special characters?");
 
     // var password = generatePassword();    
     var passwordText = document.querySelector("#password");
