@@ -115,6 +115,7 @@ button[disabled] {
     border-radius: 6px;
     resize: none;
     overflow: hidden;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 @media (max-width: 690px) {
