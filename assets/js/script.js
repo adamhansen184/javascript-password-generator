@@ -81,7 +81,7 @@ function writePassword() {
     // Define variables to store the password length and different character types
     var passwordLength, passwordLowercase, passwordUppercase, passwordNumbers, passwordSpecial;
 
-    // Prompt for or randomly generate the length of the password
+    // Call the getLength funtion to prompt for or randomly generate the length of the password
     passwordLength = getLength();
 
     // Prompt for and require at least one of the following character types: lowercase, uppercase, numeric, and/or special characters
@@ -92,12 +92,16 @@ function writePassword() {
         passwordSpecial = confirm("Would you like to include special characters?");
     } while (!passwordLowercase && !passwordUppercase && !passwordNumbers && !passwordSpecial);
 
+    // Call the generatePassowrd function to generate a password based on the user's inputs
     var password = generatePassword(passwordLength, passwordLowercase, passwordUppercase, passwordNumbers, passwordSpecial);
+
+    // Query the DOM for the password testarea
     var passwordText = document.querySelector("#password");
 
+    // Display the generated password in the passwordText textarea
     passwordText.value = password;
 
 }
 
-// Add a click event listener to the generate button
+// Add a click event listener to the generate button that calls the writePassword function
 generateBtn.addEventListener("click", writePassword);
