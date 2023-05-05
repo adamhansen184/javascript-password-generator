@@ -3,12 +3,18 @@ var generateBtn = document.querySelector("#generate");
 
 // Prompt for or randomly generate the length of the password
 function getLength() {
+    // Declare a variable to store the length of the password
+    var length;
     // Prompt the user if they would like to specify the length of their password or use a random length
     if ( confirm( "Would you like to specify the length of your password or use a random length?" ) ) {
         // Prompt the user for the length of their password and store the input as a number
-        var length = Number( prompt("How long (between 8 and 128 characters) would you like your password to be?") );
+        length = Number( prompt("How long (between 8 and 128 characters) would you like your password to be?") );
 
-        // TODO: Validate the user's input
+        // Validate if the user's input is a number between 8 and 128 and prompt again if the input is invalid
+        while (length < 8 || length > 128) {
+            alert( "Invalid length. Please enter a number between 8 and 128." );
+            length = Number( prompt("How long (between 8 and 128 characters) would you like your password to be?") );
+        }
 
         // Return the validated length
         return length;
