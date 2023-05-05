@@ -86,6 +86,7 @@ function writePassword() {
 
     // Prompt for and require at least one of the following character types: lowercase, uppercase, numeric, and/or special characters
     do {
+        alert("Please select at least one of the following character types: lowercase, uppercase, numeric, and/or special characters.");
         passwordLowercase = confirm("Would you like to include lowercase letters?");
         passwordUppercase = confirm("Would you like to include uppercase letters?");
         passwordNumbers = confirm("Would you like to include numbers?");
