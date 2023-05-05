@@ -1,6 +1,13 @@
 // Query the DOM for the generate button
 var generateBtn = document.querySelector("#generate");
 
+// Define constant strings for each of the different character types
+const lowercaseLetters = "abcdefghijklmnopqrstuvwxyz";
+const uppercaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const numbers = "0123456789";
+// Define constant string of escaped special characters from https://owasp.org/www-community/password-special-characters
+const specialCharacters = " !\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
+
 // Generate a password based on the user's inputs
 function generatePassword(length, lowercase, uppercase, numbers, special) {
     // Declare a string to store all possible characters
@@ -23,7 +30,7 @@ function generatePassword(length, lowercase, uppercase, numbers, special) {
 
     // Return the generated password
     return password;
-    
+
 }
 
 // Prompt for or randomly generate the length of the password
