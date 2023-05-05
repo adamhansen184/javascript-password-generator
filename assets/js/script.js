@@ -12,11 +12,18 @@ function generatePassword(length, lowercase, uppercase, numbers, special) {
     // TODO: If the user wants upercase letters, add all uppercase letters to the availableCharacters array
     // TODO: If the user wants numbers, add all numbers to the availableCharacters array
     // TODO: If the user wants special characters, add password special characters from https://owasp.org/www-community/password-special-characters to the availableCharacters array
-    // TODO: Randomly select characters from the availableCharacters array and add to the password string until the password length is reached
+    
+    // Select characters randomly from the availableCharacters array and add to the password string until the passed password length is reached
+    for ( var i = 0; i < length; i++ ) {
+        // Calculate a random index between 0 and the length of the availableCharacters array
+        var randomIndex = Math.floor( Math.random() * availableCharacters.length );
+        // Concatenate the character at the randomIndex of the availableCharacters array to the password string
+        password += availableCharacters[randomIndex];
+    }
 
     // Return the generated password
     return password;
-
+    
 }
 
 // Prompt for or randomly generate the length of the password
