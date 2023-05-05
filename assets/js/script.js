@@ -1,6 +1,24 @@
 // Query the DOM for the generate button
 var generateBtn = document.querySelector("#generate");
 
+// Generate a password based on the user's inputs
+function generatePassword(length, lowercase, uppercase, numbers, special) {
+    // Declare an array to store all possible characters
+    var availableCharacters = [];
+    // Declare a string variable to store the generated password
+    var password = "";
+
+    // TODO: If the user wants lowercase letters, add all lowercase letters to the availableCharacters array
+    // TODO: If the user wants upercase letters, add all uppercase letters to the availableCharacters array
+    // TODO: If the user wants numbers, add all numbers to the availableCharacters array
+    // TODO: If the user wants special characters, add password special characters from https://owasp.org/www-community/password-special-characters to the availableCharacters array
+    // TODO: Randomly select characters from the availableCharacters array and add to the password string until the password length is reached
+
+    // Return the generated password
+    return password;
+
+}
+
 // Prompt for or randomly generate the length of the password
 function getLength() {
     // Declare a variable to store the length of the password
@@ -43,11 +61,10 @@ function writePassword() {
         passwordSpecial = confirm("Would you like to include special characters?");
     } while ( !passwordLowercase && !passwordUppercase && !passwordNumbers && !passwordSpecial );
 
-    // var password = generatePassword(passwordLength, passwordLowercase, passwordUppercase, passwordNumbers, passwordSpecial);    
+    var password = generatePassword(passwordLength, passwordLowercase, passwordUppercase, passwordNumbers, passwordSpecial);    
     var passwordText = document.querySelector("#password");
 
-    // passwordText.value = password;
-    passwordText.value = "password";
+    passwordText.value = password;
 
 }
 
