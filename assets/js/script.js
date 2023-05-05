@@ -9,7 +9,7 @@ function getLength() {
     if ( confirm( "Would you like to specify the length of your password or use a random length?" ) ) {
         // Prompt the user for the length of their password and store the input as a number
         length = Number( prompt("How long (between 8 and 128 characters) would you like your password to be?") );
-
+        
         // Validate if the user's input is a number between 8 and 128 and prompt again if the input is invalid
         while (length < 8 || length > 128) {
             alert( "Invalid length. Please enter a number between 8 and 128." );
@@ -19,10 +19,11 @@ function getLength() {
         // Return the validated length
         return length;
     } else {
-        // TODO: Calculate a random length between 8 and 128
+        // Calculate a random number between 8 and 128 for password length
+        length = Math.floor( Math.random() * 121 ) + 8;
 
-        // TODO: Return a random length
-        return 8;
+        // Return the random length
+        return length;
     }
 }
 
