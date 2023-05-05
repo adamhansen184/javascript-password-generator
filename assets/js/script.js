@@ -15,10 +15,26 @@ function generatePassword(length, lowercase, uppercase, numbers, special) {
     // Declare a string variable to store the generated password
     var password = "";
 
-    // TODO: If the user wants lowercase letters, add all lowercase letters to the availableCharacters string
-    // TODO: If the user wants upercase letters, add all uppercase letters to the availableCharacters string
-    // TODO: If the user wants numbers, add all numbers to the availableCharacters string
-    // TODO: If the user wants special characters, add password special characters from https://owasp.org/www-community/password-special-characters to the availableCharacters string
+    // If the user wants lowercase letters, add all lowercase letters to the availableCharacters string
+    if ( lowercase ) {
+        // Concatenate the lowercaseLetters string to the availableCharacters string
+        availableCharacters += lowercaseLetters;
+    }
+    // If the user wants upercase letters, add all uppercase letters to the availableCharacters string
+    if ( uppercase ) {
+        // Concatenate the uppercaseLetters string to the availableCharacters string
+        availableCharacters += uppercaseLetters;
+    }
+    // If the user wants numbers, add all numbers to the availableCharacters string
+    if ( numbers ) {
+        // Concatenate the numbers string to the availableCharacters string
+        availableCharacters += numbers;
+    }
+    // If the user wants special characters, add password special characters from https://owasp.org/www-community/password-special-characters to the availableCharacters string
+    if ( special ) {
+        // Concatenate the specialCharacters string to the availableCharacters string
+        availableCharacters += specialCharacters;
+    }
     
     // Select characters randomly from the availableCharacters string and add to the password string until the passed password length is reached
     for ( var i = 0; i < length; i++ ) {
