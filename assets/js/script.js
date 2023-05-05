@@ -3,22 +3,22 @@ var generateBtn = document.querySelector("#generate");
 
 // Generate a password based on the user's inputs
 function generatePassword(length, lowercase, uppercase, numbers, special) {
-    // Declare an array to store all possible characters
-    var availableCharacters = [];
+    // Declare a string to store all possible characters
+    var availableCharacters = "";
     // Declare a string variable to store the generated password
     var password = "";
 
-    // TODO: If the user wants lowercase letters, add all lowercase letters to the availableCharacters array
-    // TODO: If the user wants upercase letters, add all uppercase letters to the availableCharacters array
-    // TODO: If the user wants numbers, add all numbers to the availableCharacters array
-    // TODO: If the user wants special characters, add password special characters from https://owasp.org/www-community/password-special-characters to the availableCharacters array
+    // TODO: If the user wants lowercase letters, add all lowercase letters to the availableCharacters string
+    // TODO: If the user wants upercase letters, add all uppercase letters to the availableCharacters string
+    // TODO: If the user wants numbers, add all numbers to the availableCharacters string
+    // TODO: If the user wants special characters, add password special characters from https://owasp.org/www-community/password-special-characters to the availableCharacters string
     
-    // Select characters randomly from the availableCharacters array and add to the password string until the passed password length is reached
+    // Select characters randomly from the availableCharacters string and add to the password string until the passed password length is reached
     for ( var i = 0; i < length; i++ ) {
-        // Calculate a random index between 0 and the length of the availableCharacters array
+        // Calculate a random index between 0 and the length of the availableCharacters string
         var randomIndex = Math.floor( Math.random() * availableCharacters.length );
-        // Concatenate the character at the randomIndex of the availableCharacters array to the password string
-        password += availableCharacters[randomIndex];
+        // Concatenate the character at the randomIndex of the availableCharacters string to the password string
+        password += availableCharacters.charAt(randomIndex);
     }
 
     // Return the generated password
