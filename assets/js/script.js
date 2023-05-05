@@ -29,12 +29,19 @@ function getLength() {
 
 // Write password to the #password input
 function writePassword() {
-    // Present user with a series of confirmation dialogs and and prompts for password criteria
-    var passwordLength = getLength();
-    var passwordLowercase = confirm("Would you like to include lowercase letters?");
-    var passwordUppercase = confirm("Would you like to include uppercase letters?");
-    var passwordNumbers = confirm("Would you like to include numbers?");
-    var passwordSpecial = confirm("Would you like to include special characters?");
+    // Define variables to store the password length and different character types
+    var passwordLength, passwordLowercase, passwordUppercase, passwordNumbers, passwordSpecial;
+    
+    // Prompt for or randomly generate the length of the password
+    passwordLength = getLength();
+
+    // Prompt for and require at least one of the following character types: lowercase, uppercase, numeric, and/or special characters
+    do {
+        passwordLowercase = confirm("Would you like to include lowercase letters?");
+        passwordUppercase = confirm("Would you like to include uppercase letters?");
+        passwordNumbers = confirm("Would you like to include numbers?");
+        passwordSpecial = confirm("Would you like to include special characters?");
+    } while ( !passwordLowercase && !passwordUppercase && !passwordNumbers && !passwordSpecial );
 
     // var password = generatePassword(passwordLength, passwordLowercase, passwordUppercase, passwordNumbers, passwordSpecial);    
     var passwordText = document.querySelector("#password");
